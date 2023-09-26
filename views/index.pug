@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Inventory-App], a project by Dean Pektas of a basic inventory system.
+
+  h1 The inventory currently has: 
+
+  ul 
+    li #[strong Items:] !{item_count}
+    li #[strong Categories:] !{category_count}
+

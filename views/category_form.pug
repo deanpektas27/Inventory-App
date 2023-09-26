@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name: 
+      input#name.form-control(type="text", placeholder='PC Parts, Mobile, etc.' name='name' value=(undefined===category ? '' : category.name), required='true' )
+    div.form-group  
+      label(for='description') Description:
+      textarea#summary.form-control(type='textarea', placeholder='Description' name='description' required='true') #{undefined===description ? '' : category.description}
+    button.btn.btn-primary(type='submit') Submit 
+
+  if errors 
+   ul 
+    for error in errors 
+     li!= error.msg
