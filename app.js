@@ -9,10 +9,12 @@ var inventoryRouter = require('./routes/inventory');
 // var usersRouter = require('./routes/users');
 
 var app = express();
+require('dotenv').config();
+
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb+srv://deanpektas12345:JMRynPzB6x6kCvMZ@cluster0.euuorg1.mongodb.net/?retryWrites=true&w=majority";
+const mongoDB = process.env.DB_URL;
 
 main().catch((err) => console.log(err));
 async function main() {
